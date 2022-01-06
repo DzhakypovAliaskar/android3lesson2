@@ -1,5 +1,6 @@
 package com.example.android3lesson2.ui.posts;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
@@ -13,8 +14,10 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostViewHold
 
     private List<Post> posts = new ArrayList<>();
 
+    @SuppressLint("NotifyDataSetChanged")
     public void setPosts(List<Post> posts) {
         this.posts = posts;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -30,7 +33,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostViewHold
 
     @Override
     public void onBindViewHolder(@NonNull PostViewHolder holder, int position) {
-holder.OnBind(posts.get(position));
+holder.onBind(posts.get(position));
     }
 
     @Override
@@ -39,17 +42,16 @@ holder.OnBind(posts.get(position));
     }
 
     public static class PostViewHolder extends RecyclerView.ViewHolder{
-
-        private ItemPostsBinding binding;
+        private final ItemPostsBinding binding;
 
         public PostViewHolder(@NonNull ItemPostsBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }
 
-        public void OnBind(Post post) {
+        public void onBind(Post post) {
             binding.tvTitle.setText(post.getTitle());
-            binding.tvContent.setText(post.getTitle());
+            binding.tvContent.setText(post.getContent());
             binding.tvUserId.setText(String.valueOf(post.getUserId()));
         }
     }

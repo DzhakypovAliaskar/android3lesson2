@@ -1,22 +1,18 @@
 package com.example.android3lesson2.ui.form;
 
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.example.android3lesson2.App;
 import com.example.android3lesson2.R;
 import com.example.android3lesson2.data.models.Post;
 import com.example.android3lesson2.databinding.FragmentFormBinding;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
