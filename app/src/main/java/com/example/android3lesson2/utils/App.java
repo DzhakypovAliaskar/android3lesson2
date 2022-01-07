@@ -1,7 +1,6 @@
-package com.example.android3lesson2;
+package com.example.android3lesson2.utils;
 
 import android.app.Application;
-
 import com.example.android3lesson2.data.remote.PostApi;
 import com.example.android3lesson2.data.remote.RetrofitClient;
 
